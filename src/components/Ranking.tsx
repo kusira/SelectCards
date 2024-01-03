@@ -65,7 +65,7 @@ function Ranking({ setScene, score, currentUser }: { setScene: any, score: Numbe
       <div className="w-max mx-auto">
         <a
           className="inline-block w-max text-white hover:text-black border-black border-2 bg-black hover:bg-white rounded-md p-3 shadow-gray-400 shadow-sm cursor-pointer transition-all select-none"
-          href={`http://twitter.com/share?url=https://example.com&text=スコアは${score}でした。&hashtags=SelectCards`}
+          href={`http://twitter.com/share?url=https://kusira-select-cards.netlify.app/&text=スコアは${score}でした。&hashtags=SelectCards`}
           target="_blank"
         ><FontAwesomeIcon icon={faXTwitter} />で結果をポスト</a>
       </div>
