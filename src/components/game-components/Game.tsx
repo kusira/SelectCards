@@ -112,13 +112,13 @@ function Game({ name, setScene, score, setScore, setCurrentUser}: { name: string
   }
 
   // 次へすすむ
-  async function waitToNext() {
+  async function waitToNext(lastCard: boolean) {
     await sleep(300);
     setScore((prev: number) => prev+1);
     setSum(0);
     setCardsIsActive(Array(10).fill(false));
     generateTestcase(score);
-    if(isNoMiss == true){
+    if(isNoMiss == true && lastCard == false){
       timeExtension();
     }
     setIsNoMiss(true);
@@ -147,7 +147,7 @@ function Game({ name, setScene, score, setScore, setCurrentUser}: { name: string
     if(activeCardsSum == target){
       setSum(activeCardsSum);
       setCardsIsActive(newCardsIsActive);
-      waitToNext();
+      waitToNext(cardsIsActive[index]);
     } else {
       setSum(activeCardsSum);
       setCardsIsActive(newCardsIsActive);
