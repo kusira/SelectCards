@@ -10,12 +10,21 @@
 
 /* Frame */
 .frame{
-  width: 500px;
-  height: 500px;
+  max-width: 500px;
+  max-height: 500px;
+  width: calc(100vw - 10px);
+  height: calc(100vw - 10px);
+
   margin: 40px auto;
   outline: 2px solid #000;
   background: white;
   overflow: hidden;
+}
+
+@media screen and (max-width:470px){
+  .frame{
+    height: 120vw;
+  }
 }
 
 /* ui */
@@ -33,6 +42,19 @@
 }
 
 /* Game */
+@media screen and (max-width:470px){
+  .game-UI{
+    scale: .8;
+    transform: translate(-62%, -56%);
+  }
+}
+
+@media screen and (max-width:380px){
+  .game-UI{
+    scale: .7;
+    transform: translate(-70%, -56%);
+  }
+}
 
 /* ディスプレイ */
 .display-wrapper{
@@ -60,6 +82,7 @@
   padding: 10px;
 }
 
+
 .card{
   cursor: pointer;
   width: 60px;
@@ -68,6 +91,17 @@
   line-height: 85px;
   border: 1px solid #000;
   margin-bottom: 12px;
+}
+
+@media screen and (max-width:470px){
+  .card-wrapper{
+    width: 400px;
+  }
+  .card{
+    width:70px;
+    height: 99px;
+    line-height: 99px;
+  }
 }
 
 .card.active{
@@ -99,9 +133,28 @@
   }
 }
 
+.left-time, .score-text{
+  font-size: 18px;
+}
+
+@media screen and (max-width:420px){
+  .timer-wrapper{
+    width: 100px;
+  }
+  .left-time, .score-text{
+    font-size: 14px;
+  }
+}
+
 /* エンドカード */
 .endcard{
   animation: endcard .5s forwards;
+}
+
+.endcard-text{
+  margin-top: 40%;
+  margin-bottom: 10%;
+  letter-spacing: 0.4em;
 }
 
 @keyframes endcard{
@@ -112,13 +165,16 @@
     transform: translate(0%, 0%);
   }
 }
+
+
 /* Progress */
 .progress-bar-wrapper{
   width: 500px;
 }
 
 .progress-bar{
-  width:25px;
+  max-width: 25px;
+  width: calc(5vw-1px);
   overflow: hidden;
   border: 1px solid gray;
   z-index: 10;

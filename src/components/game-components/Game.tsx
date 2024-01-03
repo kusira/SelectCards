@@ -159,8 +159,8 @@ function Game({ name, setScene, score, setScore, setCurrentUser}: { name: string
       <Progress score={score}/>
       {/* タイマー */}
       <div className="timer-wrapper absolute">
-      <p className="text-center text-xl select-none">残り時間 ⏱</p>
-      <p className="text-center text-xl select-none">{
+      <p className="left-time text-center select-none">⏱残り時間⏱</p>
+      <p className="left-time text-center select-none">{
         endTime-time <= 0 ? "0.00": `${("00" + Math.floor((endTime-time)/1000)).slice(-2)}.${("00" + Math.floor((endTime-time)/10)%100).slice(-2)}` 
       }</p>
       { isTimeExtension &&
@@ -200,7 +200,7 @@ function Game({ name, setScene, score, setScore, setCurrentUser}: { name: string
       {/* エンドカード */}
       { endTime-time <= 0 &&
         <div className="endcard absolute w-full h-full border-2 bg-gray-50">
-          <p className="text-center text-4xl font-bold select-none" style={{marginTop: "200px",marginBottom: "50px", letterSpacing: "0.4em"}}>終了</p>
+          <p className="endcard-text text-center text-4xl font-bold select-none">終了</p>
           <div
             className="w-max mx-auto bg-red-400 hover:bg-red-600 rounded-md p-3 shadow-gray-400 shadow-sm cursor-pointer transition-all select-none"
             onClick={() => {setScene(3);  sendScore()}}

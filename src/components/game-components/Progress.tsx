@@ -42,7 +42,7 @@ function Progress({ score } : { score:number }) {
           </div>
         ))}
       </div>
-      <p className="absolute right-6 top-6 text-xl select-none">スコア: { score }</p>
+      <p className="score-text absolute right-6 top-6 select-none">スコア: { score }</p>
       { isLevelUp==true &&
         <p className="level-up absolute right-12 top-24 text-md text-blue-700 select-none">Level Up!</p>
       }
