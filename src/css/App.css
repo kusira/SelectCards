@@ -27,6 +27,7 @@
   }
 }
 
+
 /* ui */
 
 .UI{
@@ -39,6 +40,10 @@
 /* Start */
 .start-UI{
   transform: translate(-50%, -60%);
+}
+
+.how-to-play{
+  width: 200px;
 }
 
 /* Game */
